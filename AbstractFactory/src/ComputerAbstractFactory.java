@@ -1,3 +1,3 @@
 public interface ComputerAbstractFactory {
-    public Computer createComputer();
+    Computer createComputer();
 }

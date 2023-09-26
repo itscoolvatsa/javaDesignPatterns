@@ -1,7 +1,7 @@
 public class ServerFactory implements ComputerAbstractFactory{
-    private String RAM;
-    private String CPU;
-    private String HDD;
+    private final String RAM;
+    private final String CPU;
+    private final String HDD;
 
     private ServerFactory(String RAM, String CPU, String HDD) {
         this.RAM = RAM;

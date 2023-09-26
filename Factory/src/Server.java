@@ -1,7 +1,7 @@
 public class Server extends Computer{
-    private String RAM;
-    private String CPU;
-    private String HDD;
+    private final String RAM;
+    private final String CPU;
+    private final String HDD;
 
     public Server(String RAM, String CPU, String HDD) {
         this.RAM = RAM;
@@ -12,7 +12,7 @@ public class Server extends Computer{
     @Override
     public String getRAM() {
         return this.RAM;
-    };
+    }
 
     @Override
     public String getCPU() {

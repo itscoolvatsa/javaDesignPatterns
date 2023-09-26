@@ -1,7 +1,7 @@
 public class ThreadSafeSingleton {
     private static ThreadSafeSingleton instance;
 
-    private ThreadSafeSingleton() {};
+    private ThreadSafeSingleton() {}
 
     public static synchronized ThreadSafeSingleton getInstance() {
         if(instance == null){
@@ -9,5 +9,5 @@ public class ThreadSafeSingleton {
         }
         System.out.println("printing from thread safe singleton");
         return instance;
-    };
+    }
 }

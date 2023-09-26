@@ -2,7 +2,7 @@ public class LazySingleton {
     private static LazySingleton instance;
     private static int val = 0;
 
-    private LazySingleton () {};
+    private LazySingleton () {}
 
     public static LazySingleton getInstance() {
         if(instance == null) {

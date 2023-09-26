@@ -1,7 +1,7 @@
 public class StaticBlockSingleton {
-    private static StaticBlockSingleton instance;
+    private static final StaticBlockSingleton instance;
 
-    private StaticBlockSingleton() {};
+    private StaticBlockSingleton() {}
 
     static {
         try{

@@ -1,10 +1,10 @@
 public class Computer {
-    private String CPU;
-    private String RAM;
-    private String HDD;
+    private final String CPU;
+    private final String RAM;
+    private final String HDD;
 
-    private boolean isGraphicsCardEnabled;
-    private boolean isBluetoothEnabled;
+    private final boolean isGraphicsCardEnabled;
+    private final boolean isBluetoothEnabled;
 
     private Computer (ComputerBuilder builder) {
         this.CPU = builder.CPU;
@@ -16,9 +16,9 @@ public class Computer {
 
     public static class ComputerBuilder {
 //        required
-        private String CPU;
-        private String RAM;
-        private String HDD;
+        private final String CPU;
+        private final String RAM;
+        private final String HDD;
 
 //        optional
         private boolean isGraphicsCardEnabled;

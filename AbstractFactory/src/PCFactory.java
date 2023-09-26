@@ -1,7 +1,7 @@
 public class PCFactory implements ComputerAbstractFactory{
-    private String RAM;
-    private String CPU;
-    private String HDD;
+    private final String RAM;
+    private final String CPU;
+    private final String HDD;
 
     public PCFactory(String RAM, String CPU, String HDD) {
         this.RAM = RAM;
