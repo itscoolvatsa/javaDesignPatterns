@@ -7,7 +7,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class User {
     public static ConcurrentHashMap<String, String> users = new ConcurrentHashMap<>();
 
-
     private String email;
     private String password;
 

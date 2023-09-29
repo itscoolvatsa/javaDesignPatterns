@@ -1,5 +1,6 @@
 package com.example;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -39,14 +40,15 @@ public class SigninServlet extends HttpServlet {
             }
         }
 
-        jsonResponse.put("email", email);
-        jsonResponse.put("password", password);
-
-        String response = "Welcome " + email;
+//        jsonResponse.put("email", email);
+//        jsonResponse.put("password", password);
+        res.setHeader("email", email);
+        res.setHeader("password", password);
         res.setStatus(HttpServletResponse.SC_OK);
-
-        out.println(response);
-        out.println(jsonResponse);
-        out.flush();
+//        res.sendRedirect("/dashboard.jsp");
+//        out.println(jsonResponse);
+//        out.flush();
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/dashboard.jsp");
+        dispatcher.forward(req, res);
     }
 }

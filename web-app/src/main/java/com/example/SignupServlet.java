@@ -25,8 +25,9 @@ public class SignupServlet extends HttpServlet {
         res.setContentType("application/json;charset=UTF-8");
         res.setStatus(HttpServletResponse.SC_OK);
 
-        PrintWriter out = res.getWriter();
-        out.println(jsonResponse);
-        out.flush();
+//        PrintWriter out = res.getWriter();
+//        out.println(jsonResponse);
+//        out.flush();
+        res.sendRedirect("/signin.jsp");
     }
 }
