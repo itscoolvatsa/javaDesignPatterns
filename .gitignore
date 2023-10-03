@@ -30,3 +30,6 @@ bin/
 
 ### Libraries ###
 libs
+
+### Java Class Files ###
+*.class

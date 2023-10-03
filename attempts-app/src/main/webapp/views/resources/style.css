@@ -1,0 +1,106 @@
+/* Basic CSS Reset */
+/* This reset removes default margin and padding on most elements */
+
+/* Reset all elements */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box; /* Helps with padding and border calculations */
+}
+
+/* Apply some basic styling for typography */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Remove list styles (bullets/numbers) from lists */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove underlines from links */
+a {
+  text-decoration: none;
+}
+
+/* Set a base style for images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Remove default button styles */
+button,
+input[type="button"],
+input[type="submit"] {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* written by Aditya */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #712de8;
+}
+
+section {
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border-radius: 15px;
+}
+
+section > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+  padding: 50px 0;
+  max-width: 600px;
+  min-width: 300px;
+  border-radius: 15px;
+}
+
+section > div > div > p {
+    margin-top: 20px;
+}
+
+#form > span {
+    font-size: 1.5em;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#form > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+#form > div > input {
+  padding: 1em;
+  border-radius: 10px;
+  border-color: darkgray;
+}
+
+#form > div > input::placeholder {
+  color: darkgray;
+}
+
+#form > .submit {
+    color: white;
+    font-size: 1em;
+    background: #712de8;
+    width: 100%;
+    padding: 12px 0px;
+    border-radius: 10px
+}
