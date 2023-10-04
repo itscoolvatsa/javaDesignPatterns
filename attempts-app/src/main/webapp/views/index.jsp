@@ -7,7 +7,7 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="../resources/style.css" />
+    <link rel="stylesheet" href="../resources/css/style.css" />
     <title>SignUp</title>
   </head>
 
@@ -15,7 +15,7 @@
     <section>
       <div>
         <div>
-          <form action="" id="form">
+          <form id="form">
             <span>Sign Up</span>
             <div>
               <label for="name"></label>
@@ -57,6 +57,7 @@
                 required
               />
             </div>
+            <p id="errors"></p>
             <button type="submit" class="submit">SignUp</button>
           </form>
         </div>
@@ -66,4 +67,5 @@
       </div>
     </section>
   </body>
+  <script src="../resources/js/script.js"></script>
 </html>

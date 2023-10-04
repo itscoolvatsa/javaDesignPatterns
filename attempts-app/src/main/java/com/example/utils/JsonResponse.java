@@ -8,12 +8,11 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 
 public class JsonResponse {
-
-
-    public int StatusCode;
-    public String Message;
-    public HashMap<String, String> data;
-    public Boolean type;
+    private int StatusCode;
+    private String Message;
+    private HashMap<String, String> data;
+    private Boolean type;
+    private JSONObject jsonResponse;
 
     public JsonResponse(int statusCode, String message) {
         StatusCode = statusCode;
@@ -27,18 +26,18 @@ public class JsonResponse {
         this.type = type;
     }
 
-    public JSONObject convertJson() {
-        JSONObject jsonResponse = new JSONObject();
+    public JsonResponse convertJson() {
+        jsonResponse = new JSONObject();
         jsonResponse.put("message", this.Message);
         jsonResponse.put("data", this.data);
         jsonResponse.put("status", type);
-        return jsonResponse;
+        return this;
     }
 
-    public void sendResponse(HttpServletResponse response, JSONObject json) throws IOException {
+    public void sendResponse(HttpServletResponse response) throws IOException {
         response.setStatus(this.StatusCode);
         PrintWriter out = response.getWriter();
-        out.println(json);
+        out.println(jsonResponse);
         out.flush();
     }
 }
