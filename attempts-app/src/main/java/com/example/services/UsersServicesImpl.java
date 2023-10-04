@@ -1,5 +1,7 @@
 package com.example.services;
 
+import com.example.bean.SignupBean;
+import com.example.model.UsersModelImpl;
 import com.example.utils.JsonResponse;
 import com.example.utils.Pair;
 import com.example.utils.Validator;
@@ -45,8 +47,12 @@ public class UsersServicesImpl implements IUsersServices {
             return;
         }
 
+        SignupBean signupBean = new SignupBean(name, email, password);
+        UsersModelImpl usersModel = new UsersModelImpl();
+        String userId = usersModel.createUser(signupBean);
+
         data.put("email", email);
-        data.put("password", password);
+        data.put("_id", userId);
         resp = new JsonResponse(HttpServletResponse.SC_OK, "signup success", data, true);
         respJson = resp.convertJson();
         resp.sendResponse(res, respJson);
