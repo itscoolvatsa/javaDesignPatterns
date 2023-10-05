@@ -51,8 +51,18 @@ public class UsersServicesImpl implements IUsersServices {
             return;
         }
 
-        SignupBean signupBean = new SignupBean(name, email, password);
         UsersModelImpl usersModel = new UsersModelImpl();
+        SigninBean signinBean = usersModel.findUserByEmail(email);
+
+        if(signinBean != null) {
+            new JsonResponse(HttpServletResponse.SC_BAD_REQUEST, ErrorTypes.USER_ALREADY_EXISTS, data, false)
+                    .convertJson()
+                    .sendResponse(res);
+            return;
+        }
+
+        SignupBean signupBean = new SignupBean(name, email, password);
+        usersModel = new UsersModelImpl();
         String userId = usersModel.createUser(signupBean);
 
         data.put("email", email);
@@ -62,7 +72,6 @@ public class UsersServicesImpl implements IUsersServices {
                 .sendResponse(res);
     }
 
-    // @TODO("Sign In User")
     @Override
     public void SigninUser(HttpServletRequest req, HttpServletResponse res) throws IOException, ParseException {
         String email = req.getParameter("email");

@@ -37,6 +37,7 @@ form.addEventListener("submit", (e) => {
 
   if (password != confirmPassword) {
     errors.innerHTML = "password must be equal";
+    e.stopImmediatePropagation();
     return;
   }
 

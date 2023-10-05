@@ -14,7 +14,7 @@
   <body>
     <section>
       <div>
-        <div>
+        <div id="inner">
           <form action="" id="form">
             <span>Sign In</span>
             <div>
@@ -30,7 +30,8 @@
                 placeholder="Password"
               />
             </div>
-            <button type="submit" class="submit">SignUp</button>
+            <p id="errors"></p>
+            <button type="submit" class="submit">SignIn</button>
           </form>
         </div>
         <div>
@@ -39,4 +40,5 @@
       </div>
     </section>
   </body>
+  <script src="../resources/js/signin.js"></script>
 </html>

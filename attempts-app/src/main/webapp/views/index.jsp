@@ -67,5 +67,5 @@
       </div>
     </section>
   </body>
-  <script src="../resources/js/script.js"></script>
+  <script src="../resources/js/signup.js"></script>
 </html>
