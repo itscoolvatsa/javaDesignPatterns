@@ -1,5 +1,6 @@
 package com.example.utils;
 
+import com.example.errorhandler.ErrorTypes;
 import jakarta.servlet.http.HttpServletResponse;
 import org.json.JSONObject;
 
@@ -14,14 +15,16 @@ public class JsonResponse {
     private Boolean type;
     private JSONObject jsonResponse;
 
-    public JsonResponse(int statusCode, String message) {
-        StatusCode = statusCode;
-        Message = message;
+    public JsonResponse(int statusCode, ErrorTypes message, HashMap<String, String> data, Boolean type) {
+        this.StatusCode = statusCode;
+        this.Message = String.valueOf(message);
+        this.data = data;
+        this.type = type;
     }
 
     public JsonResponse(int statusCode, String message, HashMap<String, String> data, Boolean type) {
-        StatusCode = statusCode;
-        Message = message;
+        this.StatusCode = statusCode;
+        this.Message = message;
         this.data = data;
         this.type = type;
     }
