@@ -21,7 +21,22 @@ const signin = (data) => {
         innerDivRes(email, name);
       }
       if (!response.ok) {
-        errors.innerText = message;
+        let msg = "";
+        msg += message;
+
+        let { attempts, time } = data;
+
+        console.log(attempts, time);
+
+        if (attempts != undefined) {
+          errors.innerText = attempts;
+          msg += `\n total attempts left ${attempts}`;
+        }
+
+        if (time != undefined) {
+          msg += `\n ${time}`;
+        }
+        errors.innerText = msg;
       }
       // if (response.ok) {
       //   window.location.href = "/signin.jsp";

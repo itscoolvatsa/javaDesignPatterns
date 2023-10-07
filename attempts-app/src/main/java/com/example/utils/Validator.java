@@ -18,7 +18,7 @@ public class Validator {
         Pattern pattern = Pattern.compile(EMAIL_REGEX);
         Matcher matcher = pattern.matcher(email);
 
-        if(!matcher.matches()) {
+        if (!matcher.matches()) {
             return new Pair<>(false, "please enter a valid email!!");
 
         }

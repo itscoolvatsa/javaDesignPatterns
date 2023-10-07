@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8"/>
     <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+            name="viewport"
     />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="../resources/css/style.css" />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+    <link href="../resources/css/style.css" rel="stylesheet"/>
     <title>SignIn</title>
-  </head>
+</head>
 
-  <body>
-    <section>
-      <div>
+<body>
+<section>
+    <div>
         <div id="inner">
-          <form action="" id="form">
-            <span>Sign In</span>
-            <div>
-              <label for="email"></label>
-              <input type="email" name="email" id="email" placeholder="Email" />
-            </div>
-            <div>
-              <label for="password"></label>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                placeholder="Password"
-              />
-            </div>
-            <p id="errors"></p>
-            <button type="submit" class="submit">SignIn</button>
-          </form>
+            <form action="" id="form">
+                <span>Sign In</span>
+                <div>
+                    <label for="email"></label>
+                    <input id="email" name="email" placeholder="Email" type="email"/>
+                </div>
+                <div>
+                    <label for="password"></label>
+                    <input
+                            id="password"
+                            name="password"
+                            placeholder="Password"
+                            type="password"
+                    />
+                </div>
+                <p id="errors"></p>
+                <button class="submit" type="submit">SignIn</button>
+            </form>
         </div>
         <div>
-          <p>Don't have an account? <a href="/">SignUp</a></p>
+            <p>Don't have an account? <a href="/">SignUp</a></p>
         </div>
-      </div>
-    </section>
-  </body>
-  <script src="../resources/js/signin.js"></script>
+    </div>
+</section>
+</body>
+<script src="../resources/js/signin.js"></script>
 </html>

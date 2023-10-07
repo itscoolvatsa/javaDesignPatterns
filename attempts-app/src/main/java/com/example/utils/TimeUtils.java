@@ -17,13 +17,13 @@ public class TimeUtils {
 
     public static String TimeDiffString(long secondsLeft) {
         long minutesLeft = 0;
-        long hoursLeft= 0;
+        long hoursLeft = 0;
 
-        if(secondsLeft > (60 * 60)) {
+        if (secondsLeft > (60 * 60)) {
             hoursLeft = secondsLeft / 60 / 60;
             secondsLeft = secondsLeft % (60 * 60);
         }
-        if(secondsLeft > 60) {
+        if (secondsLeft > 60) {
             minutesLeft = secondsLeft / 60;
             secondsLeft = secondsLeft % 60;
         }

@@ -23,10 +23,11 @@ public class UsersModelImpl implements IUsersModel {
                 .append("attemptCount", 0);
         MongoCollection<Document> usersDatabase = MongoDBConn.getUserCollection();
         InsertOneResult result = usersDatabase.insertOne(userDocument);
-        return Objects.requireNonNull(result.getInsertedId())
-                      .asObjectId()
-                      .getValue()
-                      .toString();
+        return Objects
+                .requireNonNull(result.getInsertedId())
+                .asObjectId()
+                .getValue()
+                .toString();
     }
 
     // @TODO("FIndUserByEmail is remaining for signin")
@@ -34,8 +35,9 @@ public class UsersModelImpl implements IUsersModel {
     public SigninBean findUserByEmail(String email) {
         MongoCollection<Document> usersDatabase = MongoDBConn.getUserCollection();
         Bson filter = Filters.eq("email", email);
-        Document userDocument = usersDatabase.find(filter)
-                                             .first();
+        Document userDocument = usersDatabase
+                .find(filter)
+                .first();
         if (userDocument == null) {
             return null;
         }
@@ -62,10 +64,10 @@ public class UsersModelImpl implements IUsersModel {
         }
         Date lastAttempt = new Date();
         Integer attemptCount = userDocument.getInteger("attemptCount");
-        if(attemptCount >= 3) {
+        if (attemptCount >= 3) {
             attemptCount = 1;
-        }else{
-            attemptCount ++;
+        } else {
+            attemptCount++;
         }
 
         Bson updateDocument = Updates.combine(
