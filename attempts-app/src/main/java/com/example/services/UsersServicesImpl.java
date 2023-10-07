@@ -79,26 +79,10 @@ public class UsersServicesImpl implements IUsersServices {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
 
-        Pair<Boolean, String> emailValidation = Validator.ValidateEmail(email);
-        Pair<Boolean, String> passwordValidation = Validator.ValidatePassword(password);
-
         res.setContentType("application/json");
         res.setCharacterEncoding("utf-8");
 
         HashMap<String, String> data = new HashMap<>();
-
-        if (!emailValidation.first) {
-            new JsonResponse(HttpServletResponse.SC_BAD_REQUEST, emailValidation.second, data, false)
-                    .convertJson()
-                    .sendResponse(res);
-            return;
-        } else if (!passwordValidation.first) {
-            new JsonResponse(HttpServletResponse.SC_BAD_REQUEST, passwordValidation.second, data, false)
-                    .convertJson()
-                    .sendResponse(res);
-            return;
-        }
-
         UsersModelImpl usersModel = new UsersModelImpl();
         SigninBean signinBean = usersModel.findUserByEmail(email);
 
@@ -131,7 +115,8 @@ public class UsersServicesImpl implements IUsersServices {
             LoggerUtil
                     .getInstance()
                     .warn(email + ": user gave wrong password for " + failedData.second + " attempt");
-            data.put("attempts", failedData.second.toString());
+            int attemptsLeft = 3 - failedData.second;
+            data.put("attempts", Integer.toString((attemptsLeft)));
             new JsonResponse(HttpServletResponse.SC_BAD_REQUEST, ErrorTypes.INVALID_CREDENTIALS, data, false)
                     .convertJson()
                     .sendResponse(res);
