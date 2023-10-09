@@ -1,0 +1,14 @@
+2023-10-09 12:19:22,885 INFO c.e.c.SignUpServletController [http-nio-8080-exec-2] signup method called
+2023-10-09 12:19:23,262 INFO c.e.m.MongoDBConn [http-nio-8080-exec-2] new database accessed
+2023-10-09 12:19:23,953 INFO c.e.m.MongoDBConn [http-nio-8080-exec-2] mongodb instance is created
+2023-10-09 12:19:24,361 INFO c.e.s.UsersServicesImpl [http-nio-8080-exec-2] test1@test.com: user already exists
+2023-10-09 12:20:42,758 INFO c.e.c.SignUpServletController [http-nio-8080-exec-2] signup method called
+2023-10-09 12:20:43,119 INFO c.e.m.MongoDBConn [http-nio-8080-exec-2] new database accessed
+2023-10-09 12:20:43,575 INFO c.e.m.MongoDBConn [http-nio-8080-exec-2] mongodb instance is created
+2023-10-09 12:20:43,842 INFO c.e.s.UsersServicesImpl [http-nio-8080-exec-2] test1@test.com: user already exists
+2023-10-09 12:20:45,134 INFO c.e.c.SignInServletController [http-nio-8080-exec-4] signin method called
+2023-10-09 12:20:45,513 INFO c.e.c.SignInServletController [http-nio-8080-exec-4] signin method called
+2023-10-09 12:21:07,234 INFO c.e.c.SignInServletController [http-nio-8080-exec-7] signin method called
+2023-10-09 12:21:07,238 INFO c.e.c.SignInServletController [http-nio-8080-exec-7] signin method called
+2023-10-09 12:28:03,865 INFO c.e.c.SignUpServletController [http-nio-8080-exec-10] signup method called
+2023-10-09 12:28:03,869 INFO c.e.s.UsersServicesImpl [http-nio-8080-exec-10] test1@test.com: user already exists

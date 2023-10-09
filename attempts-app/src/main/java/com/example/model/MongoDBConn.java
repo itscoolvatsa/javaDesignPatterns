@@ -31,11 +31,11 @@ public class MongoDBConn {
         try {
             instance = MongoClients.create(settings);
             LoggerUtil
-                    .getInstance()
+                    .getInstance(MongoDBConn.class)
                     .info("mongodb instance is created");
         } catch (Exception e) {
             LoggerUtil
-                    .getInstance()
+                    .getInstance(MongoDBConn.class)
                     .fatal("Error creating MongoClient: " + e.getMessage());
         }
     }
@@ -43,7 +43,7 @@ public class MongoDBConn {
     private static MongoClient getInstance() {
         if (instance == null) {
             LoggerUtil
-                    .getInstance()
+                    .getInstance(MongoDBConn.class)
                     .info("new database accessed");
             new MongoDBConn();
         }

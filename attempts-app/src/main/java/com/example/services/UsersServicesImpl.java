@@ -52,7 +52,7 @@ public class UsersServicesImpl implements IUsersServices {
 
         if (signinBean != null) {
             LoggerUtil
-                    .getInstance()
+                    .getInstance(UsersServicesImpl.class)
                     .info(email + ": user already exists");
             new JsonResponse(HttpServletResponse.SC_BAD_REQUEST, ErrorTypes.USER_ALREADY_EXISTS, data, false)
                     .convertJson()
@@ -67,7 +67,7 @@ public class UsersServicesImpl implements IUsersServices {
         data.put("email", email);
         data.put("_id", userId);
         LoggerUtil
-                .getInstance()
+                .getInstance(UsersServicesImpl.class)
                 .info(email + ": new user created");
         new JsonResponse(HttpServletResponse.SC_OK, "signup success", data, true)
                 .convertJson()
@@ -88,7 +88,7 @@ public class UsersServicesImpl implements IUsersServices {
 
         if (signinBean == null) {
             LoggerUtil
-                    .getInstance()
+                    .getInstance(UsersServicesImpl.class)
                     .info(email + ": not found inside the database");
             new JsonResponse(HttpServletResponse.SC_BAD_REQUEST, ErrorTypes.USER_DOES_NOT_EXISTS, data, false)
                     .convertJson()
@@ -101,7 +101,7 @@ public class UsersServicesImpl implements IUsersServices {
 
         if (signinBean.ATTEMPT_COUNT >= 3 && timeDiff > 0) {
             LoggerUtil
-                    .getInstance()
+                    .getInstance(UsersServicesImpl.class)
                     .warn(email + ": user is locked for " + timeDiffString);
             data.put("time", "account is locked for 24 hours will start in " + timeDiffString);
             new JsonResponse(HttpServletResponse.SC_BAD_REQUEST, ErrorTypes.ACCOUNT_LOCKED_FOR_24_HRS, data, false)
@@ -113,7 +113,7 @@ public class UsersServicesImpl implements IUsersServices {
         if (!Objects.equals(signinBean.Password, password)) {
             Pair<Date, Integer> failedData = usersModel.findUserByEmailAndUpdateDate(email);
             LoggerUtil
-                    .getInstance()
+                    .getInstance(UsersServicesImpl.class)
                     .warn(email + ": user gave wrong password for " + failedData.second + " attempt");
             int attemptsLeft = 3 - failedData.second;
             data.put("attempts", Integer.toString((attemptsLeft)));

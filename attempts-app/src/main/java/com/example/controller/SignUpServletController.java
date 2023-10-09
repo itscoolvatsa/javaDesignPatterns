@@ -15,7 +15,7 @@ public class SignUpServletController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         LoggerUtil
-                .getInstance()
+                .getInstance(SignUpServletController.class)
                 .info("signup method called");
         UsersServicesImpl usersServices = new UsersServicesImpl();
         usersServices.SignupUser(req, res);
